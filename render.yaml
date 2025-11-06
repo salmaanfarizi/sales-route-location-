@@ -1,0 +1,20 @@
+services:
+  # Web Service - Full Stack App
+  - type: web
+    name: sales-route-collector
+    env: node
+    region: oregon
+    plan: free
+    branch: claude/initial-setup-011CUsBxuGpvpXbMJP5mJE61
+    buildCommand: npm install && cd client && npm install && npm run build && cd ..
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: GOOGLE_SHEET_ID
+        sync: false
+    healthCheckPath: /api/health

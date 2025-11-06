@@ -1,0 +1,22 @@
+# Files to exclude from Render deployment
+# This helps reduce slug size
+
+# Documentation (not needed in production)
+*.md
+!README.md
+
+# Development files
+.git/
+.gitignore
+.env.example
+
+# Credentials (should be in environment variables)
+server/config/credentials.json
+credentials_base64.txt
+
+# Tests
+*.test.js
+*.spec.js
+
+# Development dependencies
+nodemon.json

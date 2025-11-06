@@ -10,9 +10,23 @@ let auth;
 
 async function initializeGoogleSheets() {
   try {
-    const credentials = JSON.parse(
-      fs.readFileSync(path.join(__dirname, '../config/credentials.json'))
-    );
+    let credentials;
+
+    // Check if credentials are provided via environment variable (for Render/production)
+    if (process.env.GOOGLE_CREDENTIALS_BASE64) {
+      console.log('Loading credentials from environment variable...');
+      const credentialsJson = Buffer.from(
+        process.env.GOOGLE_CREDENTIALS_BASE64,
+        'base64'
+      ).toString('utf-8');
+      credentials = JSON.parse(credentialsJson);
+    } else {
+      // Fall back to reading from file (for local development)
+      console.log('Loading credentials from file...');
+      credentials = JSON.parse(
+        fs.readFileSync(path.join(__dirname, '../config/credentials.json'))
+      );
+    }
 
     auth = new google.auth.GoogleAuth({
       credentials,
@@ -20,6 +34,7 @@ async function initializeGoogleSheets() {
     });
 
     sheets = google.sheets({ version: 'v4', auth });
+    console.log('Google Sheets API initialized successfully');
     return true;
   } catch (error) {
     console.error('Error initializing Google Sheets:', error.message);
