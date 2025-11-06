@@ -1,0 +1,29 @@
+{
+  "name": "sales-route-collector",
+  "version": "1.0.0",
+  "description": "Customer data collection app for sales routes in Al-Hasa",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install",
+    "build": "cd client && npm run build",
+    "dev-all": "concurrently \"npm run dev\" \"npm run client\""
+  },
+  "keywords": ["sales", "route", "data-collection", "maps"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "googleapis": "^128.0.0",
+    "multer": "^1.4.5-lts.1",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.2"
+  }
+}
