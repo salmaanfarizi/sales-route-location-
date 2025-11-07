@@ -12,6 +12,7 @@ function DataForm({ onShopAdded, apiKey }) {
     googleMapsLink: '',
     route: '',
     storeType: '',
+    operatingHours: '',
   });
 
   const [capturedImage, setCapturedImage] = useState(null);
@@ -174,8 +175,8 @@ function DataForm({ onShopAdded, apiKey }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.shopName || !formData.route || !formData.storeType) {
-      alert('Please fill in Shop Name, Route, and Store Type.');
+    if (!formData.shopName || !formData.route || !formData.storeType || !formData.operatingHours) {
+      alert('Please fill in Shop Name, Route, Store Type, and Operating Hours.');
       return;
     }
 
@@ -190,6 +191,7 @@ function DataForm({ onShopAdded, apiKey }) {
         googleMapsLink: formData.googleMapsLink,
         route: formData.route,
         storeType: formData.storeType,
+        operatingHours: formData.operatingHours,
         photoUrl: capturedImage || '',
       });
 
@@ -204,6 +206,7 @@ function DataForm({ onShopAdded, apiKey }) {
         googleMapsLink: '',
         route: '',
         storeType: '',
+        operatingHours: '',
       });
       setCapturedImage(null);
 
@@ -439,6 +442,27 @@ function DataForm({ onShopAdded, apiKey }) {
               onClick={() => setFormData(prev => ({ ...prev, storeType: 'Discount Store' }))}
             >
               Discount Store
+            </button>
+          </div>
+        </div>
+
+        {/* Operating Hours */}
+        <div className="form-group">
+          <label>Operating Hours *</label>
+          <div className="operating-hours-buttons">
+            <button
+              type="button"
+              className={`hours-btn ${formData.operatingHours === 'Daytime' ? 'active' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, operatingHours: 'Daytime' }))}
+            >
+              🌞 Daytime Only
+            </button>
+            <button
+              type="button"
+              className={`hours-btn ${formData.operatingHours === '24 Hours' ? 'active' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, operatingHours: '24 Hours' }))}
+            >
+              🌙 24 Hours Open
             </button>
           </div>
         </div>

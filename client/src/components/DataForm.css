@@ -283,6 +283,38 @@
   transform: scale(1.02);
 }
 
+/* Operating Hours Buttons */
+.operating-hours-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.hours-btn {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.hours-btn:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.hours-btn.active {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
 /* Submit Button */
 .btn-submit {
   width: 100%;

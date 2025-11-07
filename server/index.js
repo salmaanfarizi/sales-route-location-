@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Routes
-app.use('/api/sheets', require('./routes/sheets'));
+app.use('/api/airtable', require('./routes/airtable'));
+app.use('/api/sheets', require('./routes/airtable')); // Alias for compatibility
 app.use('/api/ocr', require('./routes/ocr'));
 app.use('/api/location', require('./routes/location'));
 
