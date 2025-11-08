@@ -29,13 +29,14 @@ function App() {
 
       if (response.data && response.data.data) {
         const shopsData = response.data.data.map((shop, index) => ({
-          id: shop.ID || `shop_${index}`,
+          id: shop.ID || shop.id || `shop_${index}`,
           name: shop['Shop Name'] || shop.shopName || 'Unknown',
           placeName: shop['Place Name'] || shop.placeName || '',
           lat: parseFloat(shop.Latitude || shop.latitude) || 0,
           lng: parseFloat(shop.Longitude || shop.longitude) || 0,
           route: shop.Route || shop.route || 'Route 1',
           storeType: shop['Store Type'] || shop.storeType || '',
+          operatingHours: shop['Operating Hours'] || shop.operatingHours || '',
           googleMapsLink: shop['Google Maps Link'] || shop.googleMapsLink || '',
           photoUrl: shop['Photo URL'] || shop.photoUrl || '',
           timestamp: shop.Timestamp || shop.timestamp || '',

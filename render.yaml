@@ -5,7 +5,7 @@ services:
     env: node
     region: oregon
     plan: free
-    branch: claude/initial-setup-011CUsBxuGpvpXbMJP5mJE61
+    branch: claude/check-011CUvLScv3d6j4vJWwuxs4A
     buildCommand: npm install && cd client && npm install && npm run build && cd ..
     startCommand: npm start
     envVars:
@@ -15,6 +15,10 @@ services:
         value: 10000
       - key: GOOGLE_MAPS_API_KEY
         sync: false
-      - key: GOOGLE_SHEET_ID
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: CLIENT_URL
         sync: false
     healthCheckPath: /api/health

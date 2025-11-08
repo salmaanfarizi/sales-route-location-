@@ -1,8 +1,39 @@
 # 🚀 Deploy to Render - Complete Guide
 
+> **⚠️ IMPORTANT UPDATE**: This guide references the old Google Sheets backend.
+>
+> **The app now uses Supabase (PostgreSQL)** instead of Google Sheets!
+>
+> For current deployment instructions with Supabase, see **[SUPABASE_SETUP.md](SUPABASE_SETUP.md)** - Section: "Deployment to Render"
+
+---
+
+## 📋 Quick Deployment Checklist (Updated for Supabase)
+
+Before you start, make sure you have:
+- ✅ Google Maps API Key
+- ✅ Supabase Project URL
+- ✅ Supabase Anon Key
+- ✅ Git repository with your code
+
+### Required Environment Variables in Render:
+
+| Key | Description | Where to get it |
+|-----|-------------|-----------------|
+| `NODE_ENV` | Set to `production` | - |
+| `PORT` | Set to `10000` | - |
+| `GOOGLE_MAPS_API_KEY` | Your Maps API key | Google Cloud Console |
+| `SUPABASE_URL` | Your Supabase project URL | Supabase Dashboard → Settings → API |
+| `SUPABASE_ANON_KEY` | Your Supabase anon key | Supabase Dashboard → Settings → API |
+| `CLIENT_URL` | Your app URL (optional) | `https://your-app.onrender.com` |
+
+---
+
+# OLD DOCUMENTATION (Google Sheets - Deprecated)
+
 This guide will help you deploy your Sales Route Collector app to Render.com in about 15 minutes.
 
-## 📋 Prerequisites
+## 📋 Prerequisites (OUTDATED)
 
 Before you start, make sure you have:
 - ✅ Google Maps API Key
