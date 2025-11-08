@@ -1,0 +1,50 @@
+{
+  "name": "sales-route-location",
+  "version": "1.0.0",
+  "description": "Sales Route Location Management System for Al-Hasa",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "server": "nodemon server/index.js",
+    "dev-all": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd client && npm install",
+    "build": "cd client && npm run build",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "sales",
+    "route",
+    "location",
+    "google-maps",
+    "ocr",
+    "react",
+    "node"
+  ],
+  "author": "Salmaan Farizi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "googleapis": "^128.0.0",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.0",
+    "tesseract.js": "^5.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
