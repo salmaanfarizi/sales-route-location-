@@ -112,6 +112,7 @@ function Dashboard({ shops, stats, onClose }) {
                 <th>Location</th>
                 <th>Route</th>
                 <th>Store Type</th>
+                <th>Operating Hours</th>
                 <th>Coordinates</th>
                 <th>Actions</th>
               </tr>
@@ -119,7 +120,7 @@ function Dashboard({ shops, stats, onClose }) {
             <tbody>
               {filteredShops.length === 0 ? (
                 <tr>
-                  <td colSpan="7" className="no-data">
+                  <td colSpan="8" className="no-data">
                     No shops found
                   </td>
                 </tr>
@@ -135,6 +136,7 @@ function Dashboard({ shops, stats, onClose }) {
                       </span>
                     </td>
                     <td>{shop.storeType || 'N/A'}</td>
+                    <td>{shop.operatingHours || 'N/A'}</td>
                     <td className="coordinates">
                       {shop.lat.toFixed(4)}, {shop.lng.toFixed(4)}
                     </td>
