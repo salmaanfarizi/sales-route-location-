@@ -5,6 +5,7 @@ client/node_modules/
 # Environment variables
 .env
 .env.local
+client/.env
 
 # Build
 client/build/
@@ -13,7 +14,7 @@ dist/
 # Logs
 logs
 *.log
-npm-debug.log*
+npm-debug-log*
 
 # OS files
 .DS_Store
@@ -33,3 +34,7 @@ uploads/
 credentials.json
 token.json
 credentials_base64.txt
+
+# Supabase
+.supabase/
+supabase/.env

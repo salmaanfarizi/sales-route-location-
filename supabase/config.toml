@@ -1,0 +1,46 @@
+# Supabase CLI Configuration
+# https://supabase.com/docs/guides/cli
+
+[project]
+# Project name
+name = "sales-route-collector"
+
+[api]
+# Port to use for the API URL
+port = 54321
+# Schemas to expose in your API
+schemas = ["public"]
+# Extra schemas to add to the search_path of every request
+extra_search_path = ["public"]
+# The maximum number of rows returns from a view, table, or stored procedure
+max_rows = 1000
+
+[db]
+# Port to use for the local database URL
+port = 54322
+# Shadow port for shadow database (used for migrations)
+shadow_port = 54320
+# Database major version to use
+major_version = 15
+
+[studio]
+# Port to use for Supabase Studio
+port = 54323
+
+[inbucket]
+# Port to use for the email testing server (Inbucket)
+port = 54324
+
+[storage]
+# Port to use for the Storage API
+port = 54325
+
+[auth]
+# Port to use for the Auth API
+port = 54326
+# Time before a refresh token expires (in seconds)
+refresh_token_rotation_enabled = true
+
+[edge_runtime]
+# Port to use for the Edge Runtime API
+port = 54327
